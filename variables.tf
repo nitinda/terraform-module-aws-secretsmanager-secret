@@ -36,7 +36,8 @@ variable "rotation_lambda_arn" {
 
 variable "rotation_rules" {
   description = "A structure that defines the rotation configuration for this secret."
-  default     = null
+  default     = {}
+  type        = map(string)
 }
 
 variable "tags" {
