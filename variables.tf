@@ -36,7 +36,9 @@ variable "rotation_lambda_arn" {
 
 variable "rotation_rules" {
   description = "A structure that defines the rotation configuration for this secret."
-  default     = {}
+  default     = {
+    automatically_after_days = 7
+  }
   type        = any
 }
 
