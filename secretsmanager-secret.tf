@@ -5,7 +5,7 @@ resource "aws_secretsmanager_secret" "secretsmanager_secret" {
   kms_key_id              = var.kms_key_id
   policy                  = var.policy
   recovery_window_in_days = var.recovery_window_in_days
-  rotation_lambda_arn     = aws_lambda_function.example.arn
+  rotation_lambda_arn     = var.rotation_lambda_arn
 
   dynamic "rotation_rules" {
     for_each = var.rotation_rules == {} ? [] : [var.rotation_rules]
